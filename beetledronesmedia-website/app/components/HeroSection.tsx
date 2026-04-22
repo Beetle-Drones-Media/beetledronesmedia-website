@@ -7,11 +7,6 @@ function HeroSection() {
   return (
     <>
       <main>
-        <nav>
-          <a href="/welcome-to-the-show" className="skipButton">
-            Skip
-          </a>
-        </nav>
         <video
           className="backgroundImage"
           autoPlay
