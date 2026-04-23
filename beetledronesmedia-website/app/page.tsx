@@ -1,6 +1,7 @@
 "use client"
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import FloatingButtons from "./components/FloatingButtons";
 
 
 
@@ -10,6 +11,7 @@ export default function Page() {
     <>
     <main>
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+     <FloatingButtons id="floating buttons" />
      <HeroSection id="hero" />
      <AboutSection id="about" />
      {/* <PortfolioSection id="portfolio" />
