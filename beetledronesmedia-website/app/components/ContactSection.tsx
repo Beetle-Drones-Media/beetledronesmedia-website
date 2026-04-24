@@ -2,23 +2,82 @@
 // import Form from 'next/form';
 import { SubmitContactForm } from './Server';
 
+function Header({ children }) {
+  return <h2 className="text-6xl font-bold mb-4 text-black text-center">{children}</h2>;
+}
 
 function ContactSection() {
 
 
     return(
-    <>
-    <main className="relative bg-green-500 text-black" >
+        <section id="contact">
+<>
+    <main className="relative flex flex-col justify-center items-center w-full bg-green-500 py-24" >
+       <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          autoPlay
+          muted
+          loop
+          poster={`/heroSplashPoster.webp`}
+        >
+          <source src={`Palm-Springs-Drone-Video-Sky-Birds-Raven-Clouds.webm`} type="video/webm" />
+        
+        </video>
+       
+        <div className="relative z-20 w-full max-w-2xl flex flex-col items-center">
+            
+            <Header
+            className="w-full max-w-xl flex flex-col gap-8 items-center">
+            Let Us Know How We Can Service You</Header> 
+        
+       
         <form action={SubmitContactForm}>
-            <input className="bg-gray-500 text-black w-full text-6xl flex flex-col items-center py-16 text-center left-15" type="text" name="name" placeholder="Name" required />
-            <input className="bg-gray-500 text-black w-full text-6xl flex flex-col items-center py-16 text-center" type="industry" name="industry" placeholder="Type of Business" />
-            <input className="bg-gray-500 text-black w-full text-6xl flex flex-col items-center py-16 text-center right-15" type="email" name="email" placeholder="Email" required />
-            <textarea className="bg-gray-500 text-black w-full text-6xl flex flex-col items-center py-16 text-center" name="message" placeholder="I'm listening.." required />
-            <button className="bottom-15 bg-green-500/75 text-black px-4 py-2"type="submit">Get Results!</button>
+            <div className="flex gap-4 p-4 z-50">
+                <input 
+                className="bg-gray-200 text-black flex-1 p-4 rounded text-lg"
+                type="text" 
+                name="name" 
+                placeholder="Name" 
+                required 
+                />
+                <input 
+                className="bg-gray-200 text-black flex-1 p-4 rounded text-lg"
+                type="email" 
+                name="email" 
+                placeholder="Email" 
+                required 
+                />
+            </div>
+            <div className="flex gap-4 p-4">
+                <input 
+                className="bg-gray-200 text-black flex-1 p-4 rounded text-lg"
+                name="industry" 
+                placeholder="Type of Business" 
+                />
+            </div>
+            <div className="flex gap-4 p-4">
+                <textarea 
+                          className="bg-gray-200 text-black w-full p-4 rounded text-lg"
+                name="message" 
+                placeholder="I'm listening.." 
+                required 
+                />
+            </div>
+            <div className="flex justify-center p-4">
+                <button 
+            className="p-4 justify-center items-center bg-black/75 text-green-500 px-8 py-3 rounded-full font-bold hover:bg-green-600 transition"
+            type="submit">
+                Get Results!
+            </button>
+            </div>
+            
         </form>
-
+        </div>
     </main>
     </>
+
+        </section>
+    
 
     );
         

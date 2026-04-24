@@ -4,6 +4,7 @@ import AboutSection from "./components/AboutSection";
 import FloatingButtons from "./components/FloatingButtons";
 import ContactSection from "./components/ContactSection";
 import PortfolioSection from "./components/PortfolioSection";
+import Footer from "./components/Footer";
 
 
 
@@ -11,19 +12,13 @@ export default function Page() {
   return (
     <>
     <main>
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-col flex-1 dark:bg-black">
      <FloatingButtons id="floating buttons" />
      <HeroSection id="hero" />
      <AboutSection id="about" />
      <PortfolioSection id="portfolio" />
-     <ContactSection id="Contact form" />
-     <footer className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-          <p>
-            ©2026 Beetle Drones Media. <br />
-            All rights reserved. <br />
-            Privacy Policy | Contact
-          </p>
-        </footer>
+     <ContactSection id="contact" />
+     <Footer id="footer"/>
      </div>
     </main>
     </>
