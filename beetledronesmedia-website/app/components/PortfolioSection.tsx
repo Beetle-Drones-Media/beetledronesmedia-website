@@ -1,30 +1,50 @@
 'use client'
+import { useState, useEffect } from "react";
 
 
 function PortfolioSection(){
 
    const portfolio = ["BeetleDronesBannerLogo1.png", "heroSplashPoster.webp", "heroSplashVideo.webm", "Palm-Springs-Drone-Video-Sky-Birds-Raven-Couds.webm"];
 
-   const portfolioCarousel = () => {
-    for(let i = 0; i < portfolio.length; i++) {
-        return portfolio[i];
-    }
-    return;
-   } 
+   const [current, setCurrent] = useState(0);
+   
+   useEffect(() => {
+    const interval = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % portfolio.length);
+    }, 5000);
+    return () => clearInterval(interval);
+   }, [portfolio.length]);
 
+    const file = portfolio[current];
+    const isVideo = file.endsWith(".webm") || file.endsWith(".mp4");
     return (
-        <>
-         <main className="relative">
+        <section id="portfolio">
+           <>
+         <main 
+         
+          className="relative">
+            {isVideo ? (
             <video
             className="backgroundImage"
             autoPlay
             muted
             loop
+            key={file}
           >
-                <source src={ { portfolioCarousel(portfolio) } } type="video/webm" />
+            <source src={ `/${file}` } type="video/webm" />
             </video>
+            ) : (
+        <img
+          className="backgroundImage"
+          src={`/${file}`}
+          alt="Portfolio"
+          key={file}
+        />
+            )}
         </main>
-        </>
+        </> 
+        </section>
+        
     );
 }
 
