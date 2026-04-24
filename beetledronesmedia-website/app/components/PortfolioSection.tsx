@@ -4,6 +4,12 @@ import { useState, useEffect } from "react";
 
 function PortfolioSection(){
 
+    /**
+     * 
+     * TODO Portfolio Section appears ONLY when scrolled to. Scrolling goes horizontally through the portfolio.
+     *          When it reaches the end, it goes to the next area
+     */
+
    const portfolio = ["BeetleDronesBannerLogo1.png", "heroSplashPoster.webp", "heroSplashVideo.webm", "Palm-Springs-Drone-Video-Sky-Birds-Raven-Couds.webm"];
 
    const [current, setCurrent] = useState(0);

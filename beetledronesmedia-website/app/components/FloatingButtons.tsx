@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
 
+/**
+ * TODO One button opens a menu that goes directly to About, Portfolio, Contact, Sample Websites
+ * I want it to be a cool little curved list that pops up rather than a standard menu or button set
+ * 
+ */
+
+
 function FloatingButtons() {
     const [active, setActive] = useState(0);
     const touchStartY = useRef(null);
