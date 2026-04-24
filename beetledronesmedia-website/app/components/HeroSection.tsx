@@ -14,7 +14,7 @@ function HeroSection() {
           loop
           poster={`/heroSplashPoster.webp`}
         >
-          <source src={`heroSplashVideo.webm`} type="video/webm" />
+          <source src={`Palm-Springs-Drone-Video-Sky-Birds-Raven-Clouds.webm`} type="video/webm" />
         
         </video>
           <a href="/welcome-to-the-show">
@@ -23,7 +23,6 @@ function HeroSection() {
             className={`bannerLogo w-80 h-auto absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2${logoHovered ? " logoNoAnim" : ""}`}
             alt=" Beetle Drones Media Banner Logo for Landing Page"
             onMouseEnter={() => setLogoHovered(true)}
-            // style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
           />
         </a>
       </main>
