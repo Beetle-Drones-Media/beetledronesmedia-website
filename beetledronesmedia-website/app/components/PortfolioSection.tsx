@@ -24,8 +24,12 @@ function PortfolioSection(){
     const file = portfolio[current];
     const isVideo = file.endsWith(".webm") || file.endsWith(".mp4");
     return (
+        <>
+        <div className="relative w-full h-[100vh] min-h-[400px] overflow-hidden bg-black">
+
+        
         <section id="portfolio">
-           <>
+           
          <main 
          
           className="relative">
@@ -48,9 +52,10 @@ function PortfolioSection(){
         />
             )}
         </main>
-        </> 
+         
         </section>
-        
+        </div>
+        </>
     );
 }
 

@@ -11,9 +11,9 @@ function Footer () {
           <p>
             ©2026 Beetle Drones Media. <br />
             All rights reserved. <br />
-            Privacy Policy | Contact
+           <a href="/privacypolicy" className="underline hover:text-green-500">Privacy Policy</a> | <a href="#contact" className="underline hover:text-green-500">Contact</a>
           </p>
-        </footer> 
+            </footer> 
             </div>
             
         </section>
