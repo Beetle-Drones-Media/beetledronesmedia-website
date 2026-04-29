@@ -14,10 +14,12 @@ function AboutSection() {
             About Section
         </Header>
         <p>
-          Here at Beetle Drones Media <br />
-          We just own it and make an impact.<br />
-          That’s how we live, that’s what we do... <br />
-          Plain and simple.
+          What do people search for when they need a product or service? <br />
+          They google 'product or service in my area' <br />
+          Most people find the first option and if they have a website, yelp page, and location <br />
+          They go. That's it. <br />
+          But if you don't look legitimate, they go to your competitor. <br />
+          Stop missing out on converting customers based on a lackluster online presence...
         </p>
       </main>
     </section>
