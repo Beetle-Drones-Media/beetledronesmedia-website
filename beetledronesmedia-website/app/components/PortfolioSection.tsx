@@ -14,7 +14,7 @@ function PortfolioSection(){
      *          When it reaches the end, it goes to the next area
      */
 
-   const portfolio = ["BeetleDronesBannerLogo1.png", "heroSplashPoster.webp", "heroSplashVideo.webm", "Palm-Springs-Drone-Video-Sky-Birds-Raven-Couds.webm"];
+   const portfolio = ["heroSplashPoster.webp", "heroSplashVideo.webm", "Palm-Springs-Drone-Video-Sky-Birds-Raven-Couds.webm"];
 
    const [current, setCurrent] = useState(0);
    
