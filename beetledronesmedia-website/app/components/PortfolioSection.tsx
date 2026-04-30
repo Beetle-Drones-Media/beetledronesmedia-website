@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 
 function Header({ children }) {
-  return <h2 className="text-6xl font-bold mb-4 text-green-400 text-center">{children}</h2>;
+  return <h2 className="text-6xl text-stroke font-bold mb-4 text-green-400 text-center">{children}</h2>;
 }
 
 function PortfolioSection(){

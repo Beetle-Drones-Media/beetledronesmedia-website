@@ -11,10 +11,10 @@ function HeroSection() {
           className="absolute top-0 left-0 w-full h-full object-cover"
           autoPlay
           muted
-          loop
+          playsInLine
           poster={`/heroSplashPoster.webp`}
         >
-          <source src={`heroSplashVideo.webm`} type="video/webm" />
+          <source src={`/heroSplashVideo.webm`} type="video/webm" />
         
         </video>
           <a href="#about">

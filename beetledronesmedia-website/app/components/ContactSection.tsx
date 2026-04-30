@@ -3,7 +3,7 @@
 import { SubmitContactForm } from './Server';
 
 function Header({ children }) {
-  return <h2 className="text-6xl font-bold mb-4 text-black text-center">{children}</h2>;
+  return <h2 className="text-6xl text-stroke font-bold mb-4 text-green-500 text-center">{children}</h2>;
 }
 
 function ContactSection() {
@@ -13,22 +13,16 @@ function ContactSection() {
         <section id="contact">
 <>
     <main className="relative flex flex-col justify-center items-center w-full bg-green-500 py-24" >
-       <video
+       <img
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          autoPlay
-          muted
-          loop
-          poster={`/heroSplashPoster.webp`}
-        >
-          <source src={`Palm-Springs-Drone-Video-Sky-Birds-Raven-Clouds.webm`} type="video/webm" />
-        
-        </video>
+          src={`Palm-Springs-Drone-Video-Sky-Birds-Raven-Clouds.webp`}
+        />
        
         <div className="relative z-20 w-full max-w-2xl flex flex-col items-center">
             
             <Header
             className="w-full max-w-xl flex flex-col gap-8 items-center">
-            Let Us Know How We Can Service You</Header> 
+            Tell Us How We Can Help Your Business</Header> 
         
        
         <form action={SubmitContactForm}>
