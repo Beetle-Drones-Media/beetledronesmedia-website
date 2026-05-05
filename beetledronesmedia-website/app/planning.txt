@@ -1,0 +1,20 @@
+
+Functionality needed currently:
+1. Need animations between sections so they don't just scroll smoothly
+2. Need to upload all sample videos as unlisted Youtube videos
+3. Need to optimize website sections for Desktop
+4. Need to optimize sections for mobile
+5. Need a good video player functionality as a TV and sample social media videos scrolling on phone
+6.
+
+Assets Needed:
+1. TV set (done)
+2. Cellphone overlay
+3. 
+4.
+5.
+6.
+7.
+8.
+9.
+10.
