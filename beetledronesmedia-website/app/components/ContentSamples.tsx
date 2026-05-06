@@ -1,14 +1,14 @@
 
 
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 function ContentSamples () {
 
     return (
-        <main>
+        <section>
             
-        </main>
+        </section>
     );
 }
 

@@ -12,9 +12,10 @@ import Footer from "./components/Footer";
 export default function Page() {
   return (
     <>
-    <main>
-    <div className="flex flex-col flex-1 dark:bg-black">
-     <FloatingButtons id="floating buttons" />
+    <main className="h-screen overflow-hidden">
+      <FloatingButtons id="floating buttons" />
+    <div className="h-full overflow-y-scroll snap-y snap-mandatory flex flex-col dark:bg-black">
+     
      <HeroSection id="hero" />
      <AboutSection id="about" />
      {/* <ContentSamples id="content" /> */}
@@ -23,6 +24,7 @@ export default function Page() {
      <Footer id="footer"/>
      </div>
     </main>
+    
     </>
   );
 }

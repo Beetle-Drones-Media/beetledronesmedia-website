@@ -18,3 +18,11 @@ Assets Needed:
 8.
 9.
 10.
+
+
+
+How to animate between sections with Lenis?
+using GSAP to help with animations
+
+
+

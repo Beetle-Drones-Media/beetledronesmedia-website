@@ -1,6 +1,7 @@
 // import {useState} from React;
 // import Form from 'next/form';
 import { SubmitContactForm } from './Server';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Header({ children }) {
   return <h2 className="text-6xl text-stroke font-bold mb-4 text-green-500 text-center">{children}</h2>;
@@ -12,7 +13,7 @@ function ContactSection() {
     return(
         <section id="contact">
 <>
-    <main className="relative flex flex-col justify-center items-center w-full bg-green-500 py-24" >
+    <main className="snap-start flex-shrink-0 relative flex flex-col justify-center items-center w-full bg-green-500 py-24" >
        <img
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           src={`Palm-Springs-Drone-Video-Sky-Birds-Raven-Clouds.webp`}

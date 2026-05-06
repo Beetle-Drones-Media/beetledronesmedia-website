@@ -1,5 +1,7 @@
 
-
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState, useEffect, useRef } from "react";
 
 function Header({ children }) {
   return <h2 className="text-6xl font-bold mb-4 text-green-400 text-center">{children}</h2>;
@@ -7,8 +9,30 @@ function Header({ children }) {
 
 
 function AboutSection() {
+const sectionRef = useRef<HTMLElement>(null); 
+    
+
+useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(sectionRef.current, {
+    
+    opacity: 0,
+    y: 60,
+    duration: 4,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "sectionRef.current",
+      start: "top 80%", // animate when top of section hits 80% down the viewport
+    },
+  });
+}, []);
+
   return (
-    <section id="about" className="w-full text-6xl flex flex-col items-center py-16 text-center">
+
+
+
+
+    <section ref={sectionRef} id="about" className="snap-start flex-shrink-0 h-screen w-full text-6xl flex flex-col items-center py-16 text-center">
       <main>
         <Header>
             About Section

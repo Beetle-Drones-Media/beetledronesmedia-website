@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Header({ children }) {
   return <h2 className="text-6xl text-stroke font-bold mb-4 text-green-400 text-center">{children}</h2>;
@@ -29,7 +29,7 @@ function PortfolioSection(){
     const isVideo = file.endsWith(".webm") || file.endsWith(".mp4");
     return (
         
-      <div className="relative w-full h-[100vh] overflow-hidden bg-black">
+      <div className="snap-start flex-shrink-0 relative w-full h-[100vh] overflow-hidden bg-black">
     <section id="portfolio">
         <Header>Drone Portfolio</Header>
       <main className="relative">
