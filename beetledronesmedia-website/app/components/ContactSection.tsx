@@ -1,19 +1,32 @@
-// import {useState} from React;
-// import Form from 'next/form';
-import { SubmitContactForm } from './Server';
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SubmitContactForm } from './Server';
 
 function Header({ children }) {
   return <h2 className="text-6xl text-stroke font-bold mb-4 text-green-500 text-center">{children}</h2>;
 }
 
 function ContactSection() {
-
+const sectionRef = useRef<HTMLElement>(null);
+   
+useEffect(() => {
+  gsap.to(sectionRef.current, {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: document.body,
+      start: () => `+=${window.innerHeight * 3}`,
+      end: () => `+=${window.innerHeight * 4}`,
+      scrub: true,
+    },
+  });
+}, []);
 
     return(
-        <section id="contact">
+        <section ref={sectionRef} id="contact" className="absolute inset-0 z-10">
 <>
-    <main className="snap-start flex-shrink-0 relative flex flex-col justify-center items-center w-full bg-green-500 py-24" >
+    <div className="relative flex flex-col justify-center items-center w-full bg-green-500 py-24" >
        <img
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           src={`Palm-Springs-Drone-Video-Sky-Birds-Raven-Clouds.webp`}
@@ -68,7 +81,7 @@ function ContactSection() {
             
         </form>
         </div>
-    </main>
+    </div>
     </>
 
         </section>

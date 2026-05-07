@@ -1,6 +1,6 @@
 'use client'
-import { useState, useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap"; 
 
 function Header({ children }) {
   return <h2 className="text-6xl text-stroke font-bold mb-4 text-green-400 text-center">{children}</h2>;
@@ -17,7 +17,21 @@ function PortfolioSection(){
    const portfolio = ["ocean-waves-california-coast.webm", "Christian-Science-Building-Montage.webm", "Drone-Venice-Beach-Muscle-Beach-Santa-Monica-California.webm"];
 
    const [current, setCurrent] = useState(0);
-   
+
+   const sectionRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  gsap.to(sectionRef.current, {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: document.body,
+      start: () => `+=${window.innerHeight * 2}`,
+      end: () => `+=${window.innerHeight * 3}`,
+      scrub: true,
+    },
+  });
+}, []);
+
    useEffect(() => {
     const interval = setInterval(() => {
         setCurrent((prev) => (prev + 1) % portfolio.length);
@@ -29,7 +43,7 @@ function PortfolioSection(){
     const isVideo = file.endsWith(".webm") || file.endsWith(".mp4");
     return (
         
-      <div className="snap-start flex-shrink-0 relative w-full h-[100vh] overflow-hidden bg-black">
+      <div ref={sectionRef} className="absolute inset-0 z-20 overflow-hidden bg-black">
     <section id="portfolio">
         <Header>Drone Portfolio</Header>
       <main className="relative">
