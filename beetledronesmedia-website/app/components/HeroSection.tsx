@@ -67,6 +67,7 @@ function HeroSection() {
 
 useEffect(() => {
   gsap.to(sectionRef.current, {
+    scale: 5,
     opacity: 0,
     scrollTrigger: {
       trigger: document.body,
