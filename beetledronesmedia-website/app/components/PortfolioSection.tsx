@@ -42,8 +42,12 @@ useEffect(() => {
     const file = portfolio[current];
     const isVideo = file.endsWith(".webm") || file.endsWith(".mp4");
     return (
-        
+       
       <div ref={sectionRef} className="absolute inset-0 z-20 overflow-hidden bg-black">
+        <img
+        src="./beetleDronesPortfolio.png"/>
+
+
     <section id="portfolio">
         <Header>Drone Portfolio</Header>
       <main className="relative">
@@ -56,11 +60,6 @@ useEffect(() => {
         )}
       </main>
     </section>
-    <img
-      src="/BDMPortfolioContainer.png"
-      className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
-      alt=""
-    />
   </div>
     );
 }

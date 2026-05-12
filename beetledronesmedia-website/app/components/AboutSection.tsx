@@ -1,4 +1,3 @@
-
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,12 +14,7 @@ function Header({ children }: { children: React.ReactNode }) {
 
 function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
-const inputRef = useRef<HTMLInputElement>(null);
-  // useEffect(() => {
-  //   gsap.from(section.Ref.current, {
-
-  //   })
-  // })
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(TextPlugin, ScrollTrigger);
@@ -34,6 +28,7 @@ const inputRef = useRef<HTMLInputElement>(null);
         scrub: true,
       },
     });
+
     gsap.to(inputRef.current, {
       duration: 2,
       text: "drone videography near me",
@@ -52,13 +47,14 @@ const inputRef = useRef<HTMLInputElement>(null);
       <header className="text-black">WebSearch 9000</header>
       <form className="flex flex-row items-center bg-white text-black px-4 py-2 rounded-full w-[500px] shadow-md text-base gap-2">
         <input
-        ref={inputRef}
+          ref={inputRef}
           className="flex-1 outline-none bg-transparent text-black placeholder-gray-400"
           placeholder="Search..."
         />
         <button
           type="submit"
-          className="bg-black text-white px-4 py-1 rounded-full text-sm">
+          className="bg-black text-white px-4 py-1 rounded-full text-sm"
+        >
           Search
         </button>
       </form>
@@ -79,3 +75,7 @@ export default AboutSection;
           Stop missing out on converting customers based on a lackluster online presence...</p>
       </main> */
 }
+
+// TODO Need to animate voice over and cursor using search engine.
+// TODO write a separate About page that tells a bit about project types and history, treat it similarly to privacy policy page
+// TODO 
