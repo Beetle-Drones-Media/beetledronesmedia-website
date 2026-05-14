@@ -24,7 +24,7 @@ useEffect(() => {
 }, []);
 
     return(
-        <section ref={sectionRef} id="contact" className="absolute inset-0 z-10">
+        <section ref={sectionRef} id="contact" className="absolute inset-0 z-10 overflow-y-auto">
 <>
     <div className="relative flex flex-col justify-center items-center w-full bg-green-500 py-24" >
        <img
@@ -83,6 +83,15 @@ useEffect(() => {
         </div>
     </div>
     </>
+    <div id="footer" className="flex items-center justify-center w-full">
+      <footer className="flex flex-col items-center justify-center text-center font-sans p-12 dark:bg-black w-full h-full">
+        <p>
+          ©2026 Beetle Drones Media. <br />
+          All rights reserved. <br />
+          <a href="/privacypolicy" className="underline hover:text-green-500">Privacy Policy</a> | <a href="#contact" className="underline hover:text-green-500">Contact</a>
+        </p>
+      </footer>
+    </div>
 
         </section>
     

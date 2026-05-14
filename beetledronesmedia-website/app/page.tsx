@@ -69,7 +69,7 @@ export default function Page() {
       <AboutSection id="about" />
       <PortfolioSection id="portfolio" />
       <ContactSection id="contact" />
-      <Footer id="footer" />
+      {/* <Footer id="footer" /> */}
     </div>
   </>
 );
