@@ -1,40 +1,10 @@
-// "use client"
-// import HeroSection from "./components/HeroSection";
-// import AboutSection from "./components/AboutSection";
-// import FloatingButtons from "./components/FloatingButtons";
-// import ContactSection from "./components/ContactSection";
-// import PortfolioSection from "./components/PortfolioSection";
-// import ContentSamples from "./components/ContentSamples";
-// import Footer from "./components/Footer";
-
-
-
-// export default function Page() {
-//   return (
-//     <>
-//     <main>
-//       <FloatingButtons id="floating buttons" />
-//     <div className="h-full overflow-y-scroll flex flex-col dark:bg-black">
-     
-//      <HeroSection id="hero" />
-//      <AboutSection id="about" />
-//      {/* <ContentSamples id="content" /> */}
-//      <PortfolioSection id="portfolio" />
-//      <ContactSection id="contact" />
-//      <Footer id="footer"/>
-//      </div>
-//     </main>
-    
-//     </>
-//   );
-// }
-
 
 "use client"
 import { useEffect } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import FloatingButtons from "./components/FloatingButtons";
@@ -42,19 +12,71 @@ import ContactSection from "./components/ContactSection";
 import PortfolioSection from "./components/PortfolioSection";
 import Footer from "./components/Footer";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 
 export default function Page() {
   useEffect(() => {
-    
     const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
 
+    // Hero
+    gsap.to("#hero", {
+      scale: 5, opacity: 0,
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: () => `+=${window.innerHeight}`,
+        scrub: true,
+      },
+    });
+
+    // About section
+    gsap.to("#about", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: document.body,
+        start: () => `+=${window.innerHeight}`,
+        end: () => `+=${window.innerHeight * 2}`,
+        scrub: true,
+      },
+    });
+
+    // About search input text animation — needs id on the input (see Step 2)
+    gsap.to("#fake-search-emgine", {
+      duration: 2,
+      text: "drone videography near me",
+      ease: "none",
+      delay: 0.5,
+    });
+
+    // Portfolio
+    gsap.to("#portfolio", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: document.body,
+        start: () => `+=${window.innerHeight * 2}`,
+        end: () => `+=${window.innerHeight * 3}`,
+        scrub: true,
+      },
+    });
+
+    // Contact
+    gsap.to("#contact", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: document.body,
+        start: () => `+=${window.innerHeight * 3}`,
+        end: () => `+=${window.innerHeight * 4}`,
+        scrub: true,
+      },
+    });
+
     return () => {
       lenis.destroy();
+      ScrollTrigger.getAll().forEach(t => t.kill()); // proper cleanup
     };
   }, []);
 
