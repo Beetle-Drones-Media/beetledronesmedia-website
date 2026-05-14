@@ -1,7 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SubmitContactForm } from './Server';
 
 function Header({ children }) {
@@ -9,24 +7,12 @@ function Header({ children }) {
 }
 
 function ContactSection() {
-const sectionRef = useRef<HTMLElement>(null);
-   
-useEffect(() => {
-  gsap.to(sectionRef.current, {
-    opacity: 0,
-    scrollTrigger: {
-      trigger: document.body,
-      start: () => `+=${window.innerHeight * 3}`,
-      end: () => `+=${window.innerHeight * 4}`,
-      scrub: true,
-    },
-  });
-}, []);
+
 
     return(
-        <section ref={sectionRef} id="contact" className="absolute inset-0 z-10 overflow-y-auto">
+        <section id="contact" className="absolute inset-0 z-10 overflow-y-auto">
 <>
-    <div className="relative flex flex-col justify-center items-center w-full bg-green-500 py-24" >
+    <div className="relative z-11 flex flex-col justify-center items-center w-full bg-green-500 py-24" >
        <img
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           src={`Palm-Springs-Drone-Video-Sky-Birds-Raven-Clouds.webp`}

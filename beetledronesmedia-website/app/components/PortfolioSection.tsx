@@ -18,19 +18,7 @@ function PortfolioSection(){
 
    const [current, setCurrent] = useState(0);
 
-   const sectionRef = useRef<HTMLDivElement>(null);
 
-useEffect(() => {
-  gsap.to(sectionRef.current, {
-    opacity: 0,
-    scrollTrigger: {
-      trigger: document.body,
-      start: () => `+=${window.innerHeight * 2}`,
-      end: () => `+=${window.innerHeight * 3}`,
-      scrub: true,
-    },
-  });
-}, []);
 
    useEffect(() => {
     const interval = setInterval(() => {
@@ -42,10 +30,6 @@ useEffect(() => {
     const file = portfolio[current];
     const isVideo = file.endsWith(".webm") || file.endsWith(".mp4");
     return (
-       
-      <div ref={sectionRef} className="absolute inset-0 z-20 overflow-hidden bg-black">
-        <img
-        src="./beetleDronesPortfolio.png"/>
 
 
     <section id="portfolio">
@@ -60,8 +44,11 @@ useEffect(() => {
         )}
       </main>
     </section>
-  </div>
     );
 }
 
 export default PortfolioSection;
+
+
+//TODO Add Portfolio TV Overlay and Array of embedded unlisted Youtube Videos
+  // Add animations to swiping on the videos

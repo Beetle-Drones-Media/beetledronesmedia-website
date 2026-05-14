@@ -9,8 +9,6 @@ import React, { useState, useEffect, useRef } from "react";
 
 
 function FloatingButtons() {
-    const [active, setActive] = useState(0);
-    const touchStartY = useRef(null);
 
 
   return (

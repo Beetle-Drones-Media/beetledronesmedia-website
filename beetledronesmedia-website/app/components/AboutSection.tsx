@@ -1,8 +1,6 @@
 "use client";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-import { TextPlugin } from "gsap/TextPlugin";
+
+
 
 function Header({ children }: { children: React.ReactNode }) {
   return (
@@ -13,41 +11,24 @@ function Header({ children }: { children: React.ReactNode }) {
 }
 
 function AboutSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(TextPlugin, ScrollTrigger);
-
-    gsap.to(sectionRef.current, {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: document.body,
-        start: () => `+=${window.innerHeight}`, // fade starts after 1 screen of scroll
-        end: () => `+=${window.innerHeight * 2}`, // fade ends after 2 screens of scroll
-        scrub: true,
-      },
-    });
-
-    gsap.to(inputRef.current, {
-      duration: 2,
-      text: "drone videography near me",
-      ease: "none",
-      delay: 0.5,
-    });
-  }, []);
+  
 
   return (
     <section
-      ref={sectionRef}
       id="about"
       className="absolute justify-center inset-0 z-30 w-full flex flex-col items-center py-16 text-center bg-green-500 text-3xl"
     >
+       <img
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src={`BeetleDronesMediaComputer.png`}
+        />
+
       {/* Fake Search Engine Bar */}
       <header className="text-black">WebSearch 9000</header>
       <form className="flex flex-row items-center bg-white text-black px-4 py-2 rounded-full w-[500px] shadow-md text-base gap-2">
         <input
-          ref={inputRef}
+          id="fake-search-emgine"
           className="flex-1 outline-none bg-transparent text-black placeholder-gray-400"
           placeholder="Search..."
         />
@@ -67,7 +48,7 @@ export default AboutSection;
 {
   /* <main>
         <Header>About Section</Header>
-        <p>  What do people search for when they need a product or service? <br />
+        <p>  What do people search for when they need your product or service? <br />
           They google 'product or service in my area' <br />
           Most people find the first option and if they have a website, yelp page, and location <br />
           They go. That's it. <br />
