@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from "react";
-import gsap from "gsap"; 
+
 
 function Header({ children }) {
   return <h2 className="text-6xl text-stroke font-bold mb-4 text-green-400 text-center">{children}</h2>;
