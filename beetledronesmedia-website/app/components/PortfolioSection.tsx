@@ -14,35 +14,18 @@ function PortfolioSection(){
      *          When it reaches the end, it goes to the next area
      */
 
-   const portfolio = ["ocean-waves-california-coast.webm", "Christian-Science-Building-Montage.webm", "Drone-Venice-Beach-Muscle-Beach-Santa-Monica-California.webm"];
+   const portfolio = ["https://www.youtube.com/embed/h7NWtcSkfhw", "https://www.youtube.com/embed/J9K1MZADD2E", "Drone-Venice-Beach-Muscle-Beach-Santa-Monica-California.webm"];
 
    const [current, setCurrent] = useState(0);
-
-
-
-   useEffect(() => {
-    const interval = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % portfolio.length);
-    }, 5000);
-    return () => clearInterval(interval);
-   }, [portfolio.length]);
-
-    const file = portfolio[current];
-    const isVideo = file.endsWith(".webm") || file.endsWith(".mp4");
+   
     return (
 
 
-    <section id="portfolio">
-        <Header>Drone Portfolio</Header>
-      <main className="relative">
-        {isVideo ? (
-          <video className="backgroundImage" autoPlay muted loop key={file}>
-            <source src={`/${file}`} type="video/webm" />
-          </video>
-        ) : (
-          <img className="backgroundImage" src={`/${file}`} alt="Portfolio" key={file} />
-        )}
-      </main>
+    <section id="portfolio" className="z-20">
+        <img
+          className="absolute inset-0 w-full h-full object-cover z-20"
+          src={`PortfolioOverlay.png`}
+        />
     </section>
     );
 }
@@ -52,3 +35,5 @@ export default PortfolioSection;
 
 //TODO Add Portfolio TV Overlay and Array of embedded unlisted Youtube Videos
   // Add animations to swiping on the videos
+  // https://www.youtube.com/embed/h7NWtcSkfhw
+  // https://www.youtube.com/embed/J9K1MZADD2E
