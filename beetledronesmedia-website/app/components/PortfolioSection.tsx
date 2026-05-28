@@ -14,7 +14,7 @@ function PortfolioSection(){
      *          When it reaches the end, it goes to the next area
      */
 
-   const portfolio = ["https://www.youtube.com/embed/h7NWtcSkfhw", "https://www.youtube.com/embed/J9K1MZADD2E", "Drone-Venice-Beach-Muscle-Beach-Santa-Monica-California.webm"];
+   const portfolio = ["https://www.youtube.com/embed/fB5QH4GWZYc", "https://www.youtube.com/embed/h7NWtcSkfhw", "https://www.youtube.com/embed/J9K1MZADD2E"];
 
    const [current, setCurrent] = useState(0);
    
