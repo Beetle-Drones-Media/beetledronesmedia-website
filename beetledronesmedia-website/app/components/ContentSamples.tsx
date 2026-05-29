@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 function ContentSamples () {
 
     return (
-        <section>
+        <section className="z-400">
             
         </section>
     );

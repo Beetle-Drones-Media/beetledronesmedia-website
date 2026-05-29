@@ -17,10 +17,10 @@ function AboutSection() {
   return (
     <section
       id="about"
-      className="absolute justify-center inset-0 z-30 w-full flex flex-col items-center py-16 text-center bg-green-500 text-3xl"
+      className="absolute justify-center inset-0 z-800 w-full flex flex-col items-center py-16 text-center bg-green-500 text-3xl"
     >
        <img
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-700"
           src={`BeetleDronesMediaComputer.png`}
         />
 

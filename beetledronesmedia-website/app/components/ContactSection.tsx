@@ -10,7 +10,7 @@ function ContactSection() {
 
 
     return(
-        <section id="contact" className="absolute inset-0 z-10 overflow-y-auto">
+        <section id="contact" className="absolute inset-0 z-0 overflow-y-auto">
 <>
     <div className="relative z-11 flex flex-col justify-center items-center w-full bg-green-500 py-24" >
        <img

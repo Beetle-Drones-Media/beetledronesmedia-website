@@ -22,6 +22,7 @@ export default function Page() {
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
 
+
     // Hero
     gsap.to("#hero", {
       scale: 5, opacity: 0,
@@ -63,16 +64,16 @@ export default function Page() {
       },
     });
 
-    // Contact
-    gsap.to("#contact", {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: document.body,
-        start: () => `+=${window.innerHeight * 3}`,
-        end: () => `+=${window.innerHeight * 4}`,
-        scrub: true,
-      },
-    });
+    // // Contact
+    // gsap.to("#contact", {
+    //   opacity: 100,
+    //   scrollTrigger: {
+    //     trigger: document.body,
+    //     start: () => `+=${window.innerHeight * 3}`,
+    //     end: () => `+=${window.innerHeight * 4}`,
+    //     scrub: true,
+    //   },
+    // });
 
     return () => {
       lenis.destroy();
