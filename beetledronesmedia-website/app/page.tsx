@@ -39,7 +39,7 @@ export default function Page() {
       opacity: 0,
       scrollTrigger: {
         trigger: document.body,
-        start: () => `+=${window.innerHeight}`,
+        start: () => `+=${window.innerHeight * 1.9}`,
         end: () => `+=${window.innerHeight * 2}`,
         scrub: true,
       },
@@ -58,22 +58,12 @@ export default function Page() {
       opacity: 0,
       scrollTrigger: {
         trigger: document.body,
-        start: () => `+=${window.innerHeight * 2}`,
+        start: () => `+=${window.innerHeight * 2.9}`,
         end: () => `+=${window.innerHeight * 3}`,
         scrub: true,
       },
     });
 
-    // // Contact
-    // gsap.to("#contact", {
-    //   opacity: 100,
-    //   scrollTrigger: {
-    //     trigger: document.body,
-    //     start: () => `+=${window.innerHeight * 3}`,
-    //     end: () => `+=${window.innerHeight * 4}`,
-    //     scrub: true,
-    //   },
-    // });
 
     return () => {
       lenis.destroy();
@@ -91,8 +81,8 @@ export default function Page() {
       <HeroSection id="hero" />
       <AboutSection id="about" />
       <PortfolioSection id="portfolio" />
+      {/* <ContentSamples id="content" /> */}
       <ContactSection id="contact" />
-      {/* <Footer id="footer" /> */}
     </div>
   </>
 );

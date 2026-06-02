@@ -9,7 +9,7 @@ function HeroSection() {
 
 
   return (
-    <section id="hero" className="absolute inset-0 z-1000 w-full overflow-hidden bg-black">
+    <section id="hero" className="absolute inset-0 z-[1000] w-full overflow-hidden bg-black">
       <video className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted playsInline poster="/heroSplashPoster.webp">
         <source src="/heroSplashVideo.webm" type="video/webm" />
       </video>

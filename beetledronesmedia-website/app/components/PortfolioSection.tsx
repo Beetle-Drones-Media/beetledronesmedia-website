@@ -19,24 +19,32 @@ function PortfolioSection(){
 
    const [current, setCurrent] = useState(0);
 
-   const VideoPlayer = ({ portfolio }) => {
-
-
+   const VideoPlayer = ({ src }: { src: string }) => {
+    return (
+        <iframe 
+        className="absolute z-[500] bg-green-500"
+        style={{
+          top: "10%",
+          left: "25%",
+          width: "50%",
+          height: "40%",
+        }}
+        src={src}
+        allowFullScreen
+        title="portfolio video"
+        />
+    );
    }
    
     return (
 
 
-    <section id="portfolio" className="z-600">
+    <section id="portfolio" className="z-[600] absolute inset-0">
         <img
-          className="absolute inset-0 w-full h-full object-cover z-600"
+          className="absolute inset-0 w-full h-full object-cover z-[600]"
           src={`PortfolioOverlay.png`}
         />
-        <iframe 
-        className="absolute z-500 bg-green-300"
-        src={portfolio[current]}
-        
-        />
+        <VideoPlayer src={portfolio[current]} />
     </section>
     );
 }
