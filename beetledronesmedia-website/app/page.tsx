@@ -53,13 +53,36 @@ export default function Page() {
       delay: 0.5,
     });
 
-    // Portfolio
-    gsap.to("#portfolio", {
-      opacity: 0,
+    // // Portfolio
+    // gsap.to("#portfolio", {
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     trigger: document.body,
+    //     start: () => `+=${window.innerHeight * 3.9}`,
+    //     end: () => `+=${window.innerHeight * 4}`,
+    //     scrub: true,
+    //   },
+    // });
+
+    gsap.fromTo("#portfolio",
+  { opacity: 1 },
+  {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: document.body,
+      start: () => `+=${window.innerHeight * 3.9}`,
+      end: () => `+=${window.innerHeight * 4}`,
+      scrub: true,
+    },
+  }
+);
+
+// Contact
+    gsap.to("#contact", {
       scrollTrigger: {
         trigger: document.body,
-        start: () => `+=${window.innerHeight * 2.9}`,
-        end: () => `+=${window.innerHeight * 3}`,
+        start: () => `+=${window.innerHeight * 5.9}`,
+        end: () => `+=${window.innerHeight * 6}`,
         scrub: true,
       },
     });
