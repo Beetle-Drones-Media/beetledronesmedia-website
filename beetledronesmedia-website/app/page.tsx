@@ -5,14 +5,15 @@ import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
+import { useGSAP } from "@gsap/react";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import FloatingButtons from "./components/FloatingButtons";
 import ContactSection from "./components/ContactSection";
 import PortfolioSection from "./components/PortfolioSection";
-import Footer from "./components/Footer";
 
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP);
 
 
 export default function Page() {
@@ -53,16 +54,6 @@ export default function Page() {
       delay: 0.5,
     });
 
-    // // Portfolio
-    // gsap.to("#portfolio", {
-    //   opacity: 0,
-    //   scrollTrigger: {
-    //     trigger: document.body,
-    //     start: () => `+=${window.innerHeight * 3.9}`,
-    //     end: () => `+=${window.innerHeight * 4}`,
-    //     scrub: true,
-    //   },
-    // });
 
     gsap.fromTo("#portfolio",
   { opacity: 1 },
